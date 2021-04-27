@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(){
+
+    }
+    Person.prototype.name = "张三"
+
+    function Asian(){
+
+    }
+    Asian.prototype = new Person()
+    Asian.prototype.color = "red"
+    var conut = new Asian()
+
+    function Chinese(){
+
+    }
+    Chinese.prototype = new Asian()
+    var count2 = new Chinese()
+
+    console.log(count2.color)
+    console.log("Person的原型:",Person.prototype)
+
+</script>
+</body>
+</html>
