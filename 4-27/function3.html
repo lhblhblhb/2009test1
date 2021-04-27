@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var add = "hello world"
+    function test(){
+        function add1(){
+            console.log(add)
+        }
+        return add1;
+    }
+    test()()
+</script>
+</body>
+</html>
