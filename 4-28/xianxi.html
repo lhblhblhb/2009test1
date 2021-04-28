@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <button>A</button>
+    <button>B</button>
+    <button>C</button>
+    <button>D</button>
+    <button>E</button>
+
+<script>
+     var add = document.getElementsByTagName("button")
+    // console.log(add)
+    for( var i=0;i<add.length;i++){
+        add[i].xxx = i
+        add[i].onclick = function(){
+            alert(this.xxx)
+        }
+    }
+</script>
+</body>
+</html>

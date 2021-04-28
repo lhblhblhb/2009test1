@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let add = "helloworldABCD"
+
+
+    //重复字符串
+    console.log(add.repeat(2))
+
+
+    //在末尾填充
+    // console.log(add.padEnd(20,"a"))
+
+    //在头部填充
+    // console.log(add.padStart(20,"a"))
+
+
+    //摘取一个字符串区域 返回一个新字符串
+    console.log(add.slice(0,3))
+
+    //将字符串分割成数组
+    // console.log(add.split(" "))
+    // console.log(add.split("+"))
+    // console.log(add.split("+").join("#"))
+
+    //判断一个字符串是否以给定字符串结尾。结果返回布尔值
+    console.log(add.endsWith("D"))
+
+    //检测 字符串
+    console.log(add.includes("he"))
+    //获取字符串长度
+    let length = add.length
+    console.log("length:",length)
+
+    //访问某个位置
+    console.log(add[4])
+
+    //找到给定字符串的位置
+    console.log(add.indexOf('or'))
+
+    // 给指定位置，返回字符
+    console.log(add.charAt(6))
+
+    //连接字符串 返回新字符串
+    console.log(add.concat('aaa','bbb'))
+</script>
+</body>
+</html>
