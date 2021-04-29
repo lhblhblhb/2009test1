@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function arr(a,...args){
+        console.log(args) //args 末尾溢出的内容
+    }
+    arr('AA','BB','CC')
+
+    function test(){
+        console.log(arguments[0],arguments[1],arguments[2])
+    }
+    test(111,222,333)
+</script>
+</body>
+</html>
