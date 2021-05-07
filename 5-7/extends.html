@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //php继承
+    class A{
+        helloA(){
+            console.log("AAAAA")
+        }
+    }
+    class B extends A{
+        static age = 0
+        heoolB(){
+            console.log("BBBBB")
+        }
+    }
+    class C extends B{
+        static sex = "M"
+    }
+    const obj1 = new C()
+
+    console.log(obj1)
+    console.log(C.age)
+    console.log(C.sex)
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const arr1 = {
+        [Symbol("name")]:"lisi",
+        [Symbol("age")]:22,
+        [Symbol("home")]:"第三堡"
+
+    }
+    const arr2 = {
+        [Symbol("name")]:"李海波",
+        [Symbol("age")]:23,
+        [Symbol("home")]:"强地",
+
+    }
+    let count = Object.assign(arr1,arr2)
+    console.log(count)
+
+    //
+</script>
+</body>
+</html>
