@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //数组原生支持 iterator 接口
+    const arr = [11,22,33,44]
+    //获取数组的 iterator对象
+    let iti = arr[Symbol.iterator]()
+    for(let v of iti){
+        console.log(v)
+    }
+
+    //定义一个 生成器函数
+    function * it(){
+        for(let k in this){
+            yield this[k]
+        }
+    }
+
+    //把生成器函数绑定到object的原型上（任意对象都可使用for of操作）
+    Object.prototype[Symbol.iterator] = it
+
+    const obj1 = {
+        name:"张",
+        age:11
+    }
+    const obj2 = {
+        name:"li",
+        age:22
+    }
+    //在对象上使用 for of
+    for(let v of obj1){
+        console.log(v)
+    }
+    for(let v of obj2){
+        console.log(v)
+    }
+</script>
+</body>
+</html>

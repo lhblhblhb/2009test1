@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    const res = new Promise(function(resolve, reject){
+        let pass = ""
+        // 原生Ajax  实例化XHR
+        var xhr = new XMLHttpRequest()
+        //监听
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState==4 && xhr.status==200){
+                //接收服务器响应数据
+                let res_data = xhr.responseText
+                console.log("第一位密码:",res_data)
+                resolve(pass+res_data)
+            }
+        }
+        //打开链接 open
+        xhr.open("get","http://vue.api.comcto.com/api/password1.php")
+        //发送请求
+        xhr.send()
+    }).then(function(data){
+        return new Promise(function(resolve, reject){
+            //请求第二个密码
+            var xhr = new XMLHttpRequest()
+            //监听
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState==4 && xhr.status==200){
+                    //接收服务器响应数据
+                    var res_data = xhr.responseText
+                    console.log("第二位密码:",res_data)
+                    resolve(data+res_data)
+                }
+            }
+            //打开链接 open
+            xhr.open("get","http://vue.api.comcto.com/api/password2.php")
+            //发送请求
+            xhr.send()
+        })
+    }).then(function(data){
+        return new Promise(function(resolve, reject){
+            //请求第二个密码
+            var xhr = new XMLHttpRequest()
+            //监听
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState==4 && xhr.status==200){
+                    //接收服务器响应数据
+                    var res_data = xhr.responseText
+                    console.log("第三位密码:",res_data)
+                    resolve(data + res_data)
+                }
+            }
+            //打开链接 open
+            xhr.open("get","http://vue.api.comcto.com/api/password3.php")
+            //发送请求
+            xhr.send()
+        })
+    }).then(function(data){
+        return new Promise(function(resolve, reject){
+            var xhr = new XMLHttpRequest()
+            //监听
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState==4 && xhr.status==200){
+                    //接收服务器响应数据
+                    var res_data = xhr.responseText
+                    console.log("第四位密码:",res_data)
+                    resolve(data + res_data)
+                }
+            }
+            //打开链接 open
+            xhr.open("get","http://vue.api.comcto.com/api/password4.php")
+            //发送请求
+            xhr.send()
+        }).then(function(data){
+            console.log("最终密码:",data)
+        })
+    })
+</script>
+</body>
+</html>

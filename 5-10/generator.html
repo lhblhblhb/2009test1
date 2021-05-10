@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function * add() {
+        let a = 11
+        let b = 22
+        let c = function(){
+            console.log("hello word")
+        }
+        yield a+b
+        yield a++
+        yield c
+    }
+    let f = add() //调用generator函数 得到一个遍历器对象
+    console.log(f.next()) //调用next()方法 获取yield的值
+    console.log(f.next())
+    f.next().value()
+</script>
+</body>
+</html>

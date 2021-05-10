@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    //1实例化XHR
+    let XHR = new XMLHttpRequest()
+
+    // 2.监听状态
+    XHR.onreadystatechange = function(){
+        if(XHR.readyState == 4 && XHR.status ==200){    //http状态码
+            //接受服务器的响应数据
+            let data = XHR.responseText
+            console.log(data)
+            console.log(typeof data)
+
+        }
+    }
+    //3.打开链接
+    XHR.open("get","http://vue.api.comcto.com/api/password1.php")
+    // 4.发送请求
+    XHR.send()
+
+</script>
+</body>
+</html>
+
