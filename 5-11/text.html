@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="./book0.html">XXX</a>
+<script>
+    //1.获取节点对象
+    var Oa = document.querySelector("a")
+    Oa.addEventListener("click",function (str) {
+        //阻止事件冒泡
+        str.stopPropagation()
+
+
+        //阻止默认行为
+        str.preventDefault()
+    })
+</script>
+</body>
+</html>
